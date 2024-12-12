@@ -48,3 +48,5 @@ Makefile
 *.VC.db
 # Ignore all files without an extension
 *.
+# Ignore executables in specific directories
+CppExercises/*/
