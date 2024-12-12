@@ -46,3 +46,5 @@ Makefile
 *.userosscache
 *.sln
 *.VC.db
+# Ignore all files without an extension
+*.
