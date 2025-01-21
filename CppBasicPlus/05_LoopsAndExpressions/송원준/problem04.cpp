@@ -22,4 +22,5 @@ int main()
 
     cout << year << "년" << endl;
     
+    return 0;
 }

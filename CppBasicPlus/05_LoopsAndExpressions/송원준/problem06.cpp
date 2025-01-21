@@ -26,4 +26,6 @@ int main()
     }
 
     cout << "2 ~ 3년동안 누적 판매량은 " << total_sum << "권 입니다." << endl;
+
+    return 0;
 }

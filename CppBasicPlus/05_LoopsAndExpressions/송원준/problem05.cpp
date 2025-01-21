@@ -19,4 +19,6 @@ int main()
     }
 
     cout << "연간 총 판매량은 " << sum << "권 입니다." << endl;
+
+    return 0;
 }
