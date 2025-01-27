@@ -2,14 +2,16 @@
 #include <string>
 #include <cctype>
 
+using namespace std;
+
 int main() {
-    std::string word;
+    string word;
     int vowels = 0, consonants = 0, others = 0;
 
-    std::cout << "단어들을 입력하십시오 (끝내려면 q): " << std::endl;
+    cout << "단어들을 입력하십시오 (끝내려면 q): " << std::endl;
 
     while (true) {
-        std::cin >> word;
+        cin >> word;
 
         if (word == "q") {
             break;
@@ -18,7 +20,7 @@ int main() {
         char firstChar = word[0];
 
         if (std::isalpha(firstChar)) {
-            firstChar = std::tolower(firstChar);
+            firstChar = tolower(firstChar);
             if (firstChar == 'a' || firstChar == 'e' || firstChar == 'i' || firstChar == 'o' || firstChar == 'u') {
                 ++vowels;
             } else {
@@ -29,9 +31,9 @@ int main() {
         }
     }
 
-    std::cout << "모음으로 시작하는 단어 수: " << vowels << std::endl;
-    std::cout << "자음으로 시작하는 단어 수: " << consonants << std::endl;
-    std::cout << "기타: " << others << std::endl;
+    cout << "모음으로 시작하는 단어 수: " << vowels << endl;
+    cout << "자음으로 시작하는 단어 수: " << consonants << endl;
+    cout << "기타: " << others << endl;
 
     return 0;
 }

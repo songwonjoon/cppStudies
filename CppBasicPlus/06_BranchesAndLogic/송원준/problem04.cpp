@@ -3,6 +3,8 @@
 
 const int strsize = 50;
 
+using namespace std;
+
 // Benevolent Order of Programmers 회원 구조체
 struct bop {
     char fullname[strsize]; // 실명
@@ -12,29 +14,29 @@ struct bop {
 };
 
 void displayMenu() {
-    std::cout << "Benevolent Order of Programmers\n";
-    std::cout << "a. 실명으로 열람\n";
-    std::cout << "b. 직함으로 열람\n";
-    std::cout << "c. BOP 아이디로 열람\n";
-    std::cout << "d. 회원이 지정한 것으로 열람\n";
-    std::cout << "q. 종료\n";
-    std::cout << "원하는 것을 선택하십시오: ";
+    cout << "Benevolent Order of Programmers\n";
+    cout << "a. 실명으로 열람\n";
+    cout << "b. 직함으로 열람\n";
+    cout << "c. BOP 아이디로 열람\n";
+    cout << "d. 회원이 지정한 것으로 열람\n";
+    cout << "q. 종료\n";
+    cout << "원하는 것을 선택하십시오: ";
 }
 
 void displayByPreference(const bop members[], int size) {
     for (int i = 0; i < size; ++i) {
         switch (members[i].preference) {
         case 0:
-            std::cout << members[i].fullname << std::endl;
+            cout << members[i].fullname << endl;
             break;
         case 1:
-            std::cout << members[i].title << std::endl;
+            cout << members[i].title << endl;
             break;
         case 2:
-            std::cout << members[i].bopname << std::endl;
+            cout << members[i].bopname << endl;
             break;
         default:
-            std::cout << "Unknown preference" << std::endl;
+            cout << "Unknown preference" << endl;
         }
     }
 }
@@ -54,37 +56,37 @@ int main() {
 
     while (true) {
         displayMenu();
-        std::cin >> choice;
+        cin >> choice;
 
         if (choice == 'q') {
-            std::cout << "프로그램을 종료합니다." << std::endl;
+            cout << "프로그램을 종료합니다." << endl;
             break;
         }
 
         switch (choice) {
         case 'a':
             for (int i = 0; i < memberCount; ++i) {
-                std::cout << members[i].fullname << std::endl;
+                cout << members[i].fullname << endl;
             }
             break;
         case 'b':
             for (int i = 0; i < memberCount; ++i) {
-                std::cout << members[i].title << std::endl;
+                cout << members[i].title << endl;
             }
             break;
         case 'c':
             for (int i = 0; i < memberCount; ++i) {
-                std::cout << members[i].bopname << std::endl;
+                cout << members[i].bopname << endl;
             }
             break;
         case 'd':
             displayByPreference(members, memberCount);
             break;
         default:
-            std::cout << "잘못된 입력입니다. 다시 시도하십시오." << std::endl;
+            cout << "잘못된 입력입니다. 다시 시도하십시오." << endl;
         }
 
-        std::cout << std::endl; // 출력 후 줄바꿈
+        cout << endl;
     }
 
     return 0;
